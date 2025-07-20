@@ -39,7 +39,7 @@ const NavBar: React.FC = () => {
     <AppBar position="static" sx={{ backgroundColor: "#1976d2" }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Victor Del Rio
+          Victor Del Rio Foces
         </Typography>
 
         {isMobile ? (

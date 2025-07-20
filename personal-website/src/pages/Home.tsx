@@ -33,9 +33,8 @@ const Home: React.FC = () => {
           color="text.secondary"
           sx={{ mb: 4, maxWidth: "600px", mx: "auto" }}
         >
-          I'm Victor Del Rio, a passionate software engineer dedicated to
-          building innovative solutions and creating exceptional user
-          experiences.
+          I'm Victor, a passionate software engineer dedicated to building
+          innovative solutions and creating exceptional user experiences.
         </Typography>
         <Box
           sx={{

@@ -26,12 +26,12 @@ const Footer: React.FC = () => {
           }}
         >
           <Typography variant="body1">
-            © {currentYear} Victor Del Rio. All rights reserved.
+            © {currentYear} Victor Del Rio Foces. All rights reserved.
           </Typography>
 
           <Box sx={{ display: "flex", gap: 2 }}>
             <Link
-              href="https://github.com"
+              href="https://github.com/Victor-Del-Rio"
               target="_blank"
               rel="noopener noreferrer"
               color="inherit"
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
               <GitHub />
             </Link>
             <Link
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/victor-del-rio-foces/"
               target="_blank"
               rel="noopener noreferrer"
               color="inherit"
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
               <LinkedIn />
             </Link>
             <Link
-              href="mailto:your.email@example.com"
+              href="vicjdrf@gmail.com"
               color="inherit"
               sx={{ display: "flex", alignItems: "center" }}
             >
