@@ -23,6 +23,7 @@ const Home: React.FC = () => {
         <Typography
           variant="h2"
           component="h1"
+          pb={1}
           gutterBottom
           sx={{
             fontWeight: "bold",
@@ -39,10 +40,7 @@ const Home: React.FC = () => {
           component="h2"
           color="text.secondary"
           sx={{ mb: 4, maxWidth: "600px", mx: "auto" }}
-        >
-          {/* I'm Victor, a passionate software engineer dedicated to building
-          innovative solutions and creating exceptional user experiences. */}
-        </Typography>
+        ></Typography>
         <Box
           sx={{
             display: "flex",
