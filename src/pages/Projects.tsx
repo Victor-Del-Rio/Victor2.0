@@ -61,7 +61,7 @@ const Projects: React.FC = () => {
         "Material-UI",
       ],
       githubUrl: "https://github.com/Victor-Del-Rio/reactPract",
-      demoUrl: "https://main.d1mz2h3n4h5175.amplifyapp.com/",
+      demoUrl: "https://master.d2b8awzajeqhb.amplifyapp.com/",
     },
     {
       title: "iQueue",

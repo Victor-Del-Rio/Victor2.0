@@ -229,8 +229,7 @@ const Contact: React.FC = () => {
             </Typography>
             <Typography variant="body2" color="text.secondary" paragraph>
               I'm always interested in hearing about new opportunities,
-              collaborating on exciting projects, or simply having a
-              conversation about technology and software development.
+              collaborating on exciting projects, or even just a good chat.
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Feel free to reach out through the contact form or connect with me
