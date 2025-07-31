@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Typography, Box } from "@mui/material";
-import { Work } from "@mui/icons-material";
+import { BusinessCenter } from "@mui/icons-material";
 import ProjectCard from "../components/ProjectCard";
 import SnackbarNotification from "../components/SnackbarNotification";
 
@@ -84,6 +84,7 @@ const Projects: React.FC = () => {
         "Find the product you're looking for and get the best price. This is a full-stack web application that allows users to search for products and get the best price. It uses the Google Shopping API to get the best price for a product.",
       technologies: ["React", "TypeScript", "Python", "Flask", "PostgreSQL"],
       onGithubClick: handleComingSoon,
+      onDemoClick: handleComingSoon,
     },
     {
       title: "OutHouse",
@@ -107,7 +108,7 @@ const Projects: React.FC = () => {
             mb: 2,
           }}
         >
-          <Work sx={{ fontSize: 40, color: "primary.main", mr: 2 }} />
+          <BusinessCenter sx={{ fontSize: 40, color: "primary.main", mr: 2 }} />
           <Typography variant="h3" component="h1">
             My Projects
           </Typography>

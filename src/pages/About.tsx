@@ -8,7 +8,7 @@ import {
   Avatar,
   Chip,
 } from "@mui/material";
-import { Download, Code, School, Work } from "@mui/icons-material";
+import { Download, Fingerprint, School, Work } from "@mui/icons-material";
 
 const About: React.FC = () => {
   const handleResumeDownload = () => {
@@ -38,11 +38,8 @@ const About: React.FC = () => {
     "Java",
     "AWS",
     "Docker",
-    "Kubernetes",
     "MongoDB",
     "PostgreSQL",
-    "Git",
-    "GraphQL",
     "REST APIs",
     "Microservices",
     "CI/CD",
@@ -53,6 +50,8 @@ const About: React.FC = () => {
       {/* Header Section */}
       <Box sx={{ textAlign: "center", mb: 6 }}>
         <Avatar
+          src="https://victorportfoliowebsite.s3.us-east-2.amazonaws.com/ProfilePic.PNG"
+          alt="Victor Del Rio"
           sx={{
             width: 150,
             height: 150,
@@ -65,43 +64,46 @@ const About: React.FC = () => {
           VD
         </Avatar>
         <Typography variant="h3" component="h1" gutterBottom>
-          About Victor Del Rio
+          About Me
         </Typography>
         <Typography
           variant="h6"
           color="text.secondary"
           sx={{ maxWidth: "600px", mx: "auto" }}
         >
-          Software Engineer | Problem Solver | Technology Enthusiast
+          Software Engineer | Problem Solver | Human Being
         </Typography>
       </Box>
 
       {/* Bio Section */}
       <Paper elevation={2} sx={{ p: 4, mb: 4 }}>
         <Box sx={{ display: "flex", alignItems: "center", mb: 3 }}>
-          <Code sx={{ mr: 2, color: "primary.main" }} />
+          <Fingerprint sx={{ mr: 2, color: "primary.main" }} />
           <Typography variant="h4" component="h2">
             My Story
           </Typography>
         </Box>
         <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
-          Hello! I'm Victor Del Rio, a passionate software engineer with a love
-          for creating innovative solutions and building exceptional user
-          experiences. My journey in technology began with curiosity and has
-          evolved into a career focused on full-stack development and modern web
-          technologies.
+          Hi! I'm Victor, a nerd that values learning, community, and fun over
+          everything. I've moved around a lot in my life, having lived in the
+          UK, Spain, Uzbekistan, Brazil and the US. Thanks to this multicultural
+          upbringing I can speak English, Spanish and Portuguese fluently and
+          hold my own in French and Russian. It also taught me to be adaptable,
+          open-minded and to value diversity. I believe this is also what gives
+          me a unique perspective on the world and how to approach problems.
         </Typography>
         <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
-          I specialize in React, TypeScript, and Node.js, with extensive
-          experience in cloud technologies like AWS. I believe in writing clean,
-          maintainable code and following best practices to create scalable
-          applications that make a positive impact.
+          I have a plethora of hobbies, including traveling, meeting new people,
+          and learning new facts or skills. These may be new tech, like builing
+          small robots and smart home devices in arduino, or random things like
+          how to solve a new rubiks cube or juggling. I also love being outdoors
+          and being active. I swam competitively from the age of 7 through
+          college which also enabled my love for other water sports like
+          surfing, sailing, and scuba diving. I also love animation and comics
+          and hope to write my own story one day.
         </Typography>
         <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
-          When I'm not coding, you can find me exploring new technologies,
-          contributing to open-source projects, or learning about the latest
-          trends in software development. I'm always eager to take on new
-          challenges and collaborate with talented teams to bring ideas to life.
+          Whether it's work related or not, feel free to reach out!
         </Typography>
       </Paper>
 
@@ -113,6 +115,18 @@ const About: React.FC = () => {
             Skills & Technologies
           </Typography>
         </Box>
+        <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
+          I'm a passionate software engineer with an obsession for the bleeding
+          edge, innovation, and collaborating with others. My journey in
+          technology began with a fascination for robotics and software and has
+          evolved into a career focused on full-stack development and modern web
+          technologies.
+        </Typography>
+        <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
+          Profesionally I specialize in React, TypeScript, Node.js, and Python,
+          with extensive experience in cloud technologies like AWS. I also like
+          to tinker with AI, robots, and smart home technologies.
+        </Typography>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
           {skills.map((skill, index) => (
             <Chip
@@ -146,8 +160,8 @@ const About: React.FC = () => {
               Frontend Development
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Creating responsive, user-friendly interfaces with React,
-              TypeScript, and modern CSS frameworks like Material-UI.
+              Designing & creating responsive, user-friendly interfaces with
+              React, TypeScript, and modern CSS frameworks like Material-UI.
             </Typography>
           </Box>
           <Box>
@@ -155,26 +169,28 @@ const About: React.FC = () => {
               Backend Development
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Building robust APIs and microservices using Node.js, Express, and
-              various database technologies.
+              Building robust APIs and microservices using Python, Node.js,
+              Express, and various database & ETL technologies.
             </Typography>
           </Box>
           <Box>
             <Typography variant="h6" gutterBottom color="primary">
-              Cloud & DevOps
+              Cybersecurity & Risk Management
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Deploying and managing applications on AWS with expertise in
-              containerization and CI/CD pipelines.
+              Implementing secure coding practices, vulnerability assessments,
+              and risk mitigation strategies to protect applications and
+              infrastructure.
             </Typography>
           </Box>
           <Box>
             <Typography variant="h6" gutterBottom color="primary">
-              Problem Solving
+              Cloud & Automation
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Analyzing complex challenges and implementing efficient, scalable
-              solutions using best practices.
+              Architecting scalable cloud solutions on AWS & Azure with
+              automated infrastructure provisioning, monitoring, and deployment
+              pipelines.
             </Typography>
           </Box>
         </Box>
