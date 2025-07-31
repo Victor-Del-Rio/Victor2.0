@@ -1,79 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Typography, Box } from "@mui/material";
 import { Work } from "@mui/icons-material";
 import ProjectCard from "../components/ProjectCard";
+import SnackbarNotification from "../components/SnackbarNotification";
+
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  githubUrl?: string;
+  demoUrl?: string;
+  onGithubClick?: () => void;
+  onDemoClick?: () => void;
+}
 
 const Projects: React.FC = () => {
-  const projects = [
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
+  const handleComingSoon = () => {
+    setShowComingSoon(true);
+  };
+
+  const handleCloseComingSoon = () => {
+    setShowComingSoon(false);
+  };
+
+  const projects: Project[] = [
     {
-      title: "E-Commerce Platform",
+      title: "TRVLHIPPO",
       description:
-        "A full-stack e-commerce application built with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, and payment integration.",
+        "A full-stack travel booking/blog application built with React & Node.js. Mostly a flex of my frontend styling skills.",
+      technologies: ["React", "JavaScript", "Node.js", "AWS"],
+      githubUrl: "https://github.com/Victor-Del-Rio/TRVLHIPPO/tree/master",
+      demoUrl: "https://master.d33zmq53lv4li5.amplifyapp.com/",
+    },
+    {
+      title: "Rendezvous",
+      description:
+        "Rendezvous is an offline-first friend-finding React Native app that uses GPS, Bluetooth, and compass sensors to guide you to friends or group meet-up points — even when you have no signal or data. ",
       technologies: [
-        "React",
+        "React Native",
         "TypeScript",
-        "Node.js",
-        "MongoDB",
-        "Stripe API",
-        "AWS",
+        "DynamoDB",
+        "GPS",
+        "Compass",
+        "Bluetooth Low Energy",
       ],
-      githubUrl: "https://github.com/yourusername/ecommerce-platform",
-      demoUrl: "https://your-ecommerce-demo.vercel.app",
+      githubUrl: "https://github.com/Victor-Del-Rio/Rendezvous",
+      onDemoClick: handleComingSoon,
     },
     {
-      title: "Task Management App",
+      title: "Personal Expense Tracker",
       description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Built with modern web technologies.",
-      technologies: [
-        "React",
-        "TypeScript",
-        "Socket.io",
-        "Express",
-        "PostgreSQL",
-      ],
-      githubUrl: "https://github.com/yourusername/task-manager",
-      demoUrl: "https://your-task-manager-demo.netlify.app",
-    },
-    {
-      title: "Weather Dashboard",
-      description:
-        "A responsive weather dashboard that displays current weather conditions and forecasts for multiple cities. Features location-based weather detection and interactive charts.",
-      technologies: [
-        "React",
-        "JavaScript",
-        "Chart.js",
-        "OpenWeather API",
-        "CSS3",
-      ],
-      githubUrl: "https://github.com/yourusername/weather-dashboard",
-      demoUrl: "https://your-weather-dashboard.vercel.app",
-    },
-    {
-      title: "Social Media Analytics",
-      description:
-        "A data visualization platform for social media analytics with interactive dashboards, real-time metrics, and comprehensive reporting features.",
-      technologies: [
-        "React",
-        "TypeScript",
-        "D3.js",
-        "Python",
-        "Flask",
-        "PostgreSQL",
-      ],
-      githubUrl: "https://github.com/yourusername/social-analytics",
-    },
-    {
-      title: "Recipe Sharing Platform",
-      description:
-        "A community-driven recipe sharing platform where users can create, share, and discover recipes. Includes rating system, comments, and meal planning features.",
-      technologies: ["React", "Node.js", "GraphQL", "MongoDB", "Cloudinary"],
-      githubUrl: "https://github.com/yourusername/recipe-platform",
-      demoUrl: "https://your-recipe-platform.herokuapp.com",
-    },
-    {
-      title: "Personal Finance Tracker",
-      description:
-        "A comprehensive personal finance management application with expense tracking, budget planning, and financial goal setting capabilities.",
+        "A comprehensive personal expenses management application with expense tracking and budget planning.",
       technologies: [
         "React",
         "TypeScript",
@@ -81,7 +60,38 @@ const Projects: React.FC = () => {
         "Chart.js",
         "Material-UI",
       ],
-      githubUrl: "https://github.com/yourusername/finance-tracker",
+      githubUrl: "https://github.com/Victor-Del-Rio/reactPract",
+      demoUrl: "https://main.d1mz2h3n4h5175.amplifyapp.com/",
+    },
+    {
+      title: "iQueue",
+      description:
+        "iQueue doubles as a queue management system for restaurants and public eventsthat allows customers to capacity and join a queue. It also allows restaurants to manage their queue and customers. People can also host private events.",
+      technologies: [
+        "React",
+        "JavaScript",
+        "Chart.js",
+        "OpenMap API",
+        "CSS3",
+        "DynamoDB",
+      ],
+      onGithubClick: handleComingSoon,
+      onDemoClick: handleComingSoon,
+    },
+    {
+      title: "Bang4Buck",
+      description:
+        "Find the product you're looking for and get the best price. This is a full-stack web application that allows users to search for products and get the best price. It uses the Google Shopping API to get the best price for a product.",
+      technologies: ["React", "TypeScript", "Python", "Flask", "PostgreSQL"],
+      onGithubClick: handleComingSoon,
+    },
+    {
+      title: "OutHouse",
+      description:
+        "A community-driven public restroom sharing platform where users can create, share, and discover public restrooms. Includes a map UI, rating system and comments.",
+      technologies: ["React", "Node.js", "GraphQL", "MongoDB", "Cloudinary"],
+      onGithubClick: handleComingSoon,
+      onDemoClick: handleComingSoon,
     },
   ];
 
@@ -133,6 +143,8 @@ const Projects: React.FC = () => {
             technologies={project.technologies}
             githubUrl={project.githubUrl}
             demoUrl={project.demoUrl}
+            onGithubClick={project.onGithubClick}
+            onDemoClick={project.onDemoClick}
           />
         ))}
       </Box>
@@ -148,6 +160,14 @@ const Projects: React.FC = () => {
           GitHub profile for the most up-to-date repositories.
         </Typography>
       </Box>
+
+      {/* Coming Soon Notification */}
+      <SnackbarNotification
+        open={showComingSoon}
+        onClose={handleCloseComingSoon}
+        message="Coming Soon!"
+        severity="info"
+      />
     </Container>
   );
 };

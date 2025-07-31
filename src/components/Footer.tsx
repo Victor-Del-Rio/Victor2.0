@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Typography,
-  Container,
-  Link,
-  IconButton,
-  Snackbar,
-  Alert,
-} from "@mui/material";
+import { Box, Typography, Container, Link, IconButton } from "@mui/material";
 import { GitHub, LinkedIn, Email } from "@mui/icons-material";
+import SnackbarNotification from "./SnackbarNotification";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -98,21 +91,13 @@ const Footer: React.FC = () => {
         </Box>
       </Container>
 
-      {/* Copy Email Confirmation Snackbar */}
-      <Snackbar
+      {/* Copy Email Confirmation */}
+      <SnackbarNotification
         open={showCopyAlert}
-        autoHideDuration={3000}
         onClose={handleCloseCopyAlert}
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-      >
-        <Alert
-          onClose={handleCloseCopyAlert}
-          severity="success"
-          sx={{ width: "100%" }}
-        >
-          Email address copied to clipboard!
-        </Alert>
-      </Snackbar>
+        message="Email address copied to clipboard!"
+        severity="success"
+      />
     </Box>
   );
 };

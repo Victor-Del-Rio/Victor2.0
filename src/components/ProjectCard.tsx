@@ -16,6 +16,8 @@ interface ProjectCardProps {
   technologies?: string[];
   githubUrl?: string;
   demoUrl?: string;
+  onGithubClick?: () => void;
+  onDemoClick?: () => void;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -24,6 +26,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies = [],
   githubUrl,
   demoUrl,
+  onGithubClick,
+  onDemoClick,
 }) => {
   return (
     <Card
@@ -73,6 +77,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             Code
           </Button>
         )}
+        {!githubUrl && onGithubClick && (
+          <Button size="small" startIcon={<GitHub />} onClick={onGithubClick}>
+            Code
+          </Button>
+        )}
         {demoUrl && (
           <Button
             size="small"
@@ -80,6 +89,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             href={demoUrl}
             target="_blank"
             rel="noopener noreferrer"
+            variant="contained"
+          >
+            Demo
+          </Button>
+        )}
+        {!demoUrl && onDemoClick && (
+          <Button
+            size="small"
+            startIcon={<Launch />}
+            onClick={onDemoClick}
             variant="contained"
           >
             Demo
