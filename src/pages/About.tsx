@@ -12,14 +12,18 @@ import { Download, Code, School, Work } from "@mui/icons-material";
 
 const About: React.FC = () => {
   const handleResumeDownload = () => {
-    // Placeholder S3 URL - replace with your actual S3 bucket URL
+    // Your actual S3 bucket URL
     const resumeUrl =
-      "https://your-s3-bucket.s3.amazonaws.com/victor-delrio-resume.pdf";
+      "https://victorportfoliowebsite.s3.us-east-2.amazonaws.com/VictorDelRioFoces_ProResume_2025.pdf";
 
-    // Create a temporary link element and trigger download
+    // Open resume in new tab
+    window.open(resumeUrl, "_blank");
+
+    // Also trigger download
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "Victor_DelRio_Resume.pdf";
+    link.target = "_blank";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
